@@ -17,15 +17,6 @@ my-website
 └── README.md             # Documentation for the project
 ```
 
-## Getting Started
-
-To get started with this project, clone the repository and install the necessary dependencies.
-
-```bash
-git clone <repository-url>
-cd my-website
-npm install
-```
 
 ## Usage
 
