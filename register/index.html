@@ -17,17 +17,20 @@
     <main>
         <section id="registration">
             <h2>Registrierung</h2>
-            <form action="/register" method="POST">
-                <label for="club-name">Vereinsname:</label>
+            <form action="/register/success.html" method="POST">
+                <label for="club-name">Vereinsname*</label>
                 <input type="text" id="club-name" name="club-name" placeholder="Geben Sie den Vereinsnamen ein" required>
                 
-                <label for="club-leader">Name des Vereinschefs:</label>
+                <label for="club-leader">Name des Vereinschefs*</label>
                 <input type="text" id="club-leader" name="club-leader" placeholder="Geben Sie den Namen des Vereinschefs ein" required>
                 
-                <label for="E-Mail">E-Mail:</label>
-                <input type="tedt" id="E-Mail" name="E-Mail" placeholder="Vereins E-Mail" required>
+                <label for="E-Mail">E-Mail*</label>
+                <input type="text" id="E-Mail" name="E-Mail" placeholder="Vereins E-Mail" required>
+
+                <label for="Telefonnummer">Telefonnummer</label>
+                <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="+41 xxx xx xx">
                 
-                <label for="password">Passwort:</label>
+                <label for="password">Passwort*</label>
                 <input type="password" id="password" name="password" placeholder="Erstellen Sie ein Passwort" required>
 
                 <button type="submit">Registrieren</button>
