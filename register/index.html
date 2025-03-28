@@ -38,10 +38,12 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ClubFines. Alle Rechte vorbehalten.</p>
-        <p>Kontakt: <a href="mailto:contact@clubfines.com">contact@clubfines.com</a></p>
-        <p>Quellcode: <a href="https://github.com/Kujo01243/demo.clubfines.com" target="_blank">GitHub Repository</a></p>
-    </footer>
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
 </body>
 </html>
