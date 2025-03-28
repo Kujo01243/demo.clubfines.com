@@ -9,10 +9,13 @@
 
 </head>
 <body>
-    <header>
-        <img src="https://demo.clubfines.com/pictures/Logo.png" alt="ClubFines Logo" class="logo">
-        <h1>Registrierung bei ClubFines</h1>
-    </header>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
 
     <main>
         <section id="registration">

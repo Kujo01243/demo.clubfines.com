@@ -4,48 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClubFines - Vereinsstrafen einfach verwalten</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <img src="pictures/Logo.png" alt="ClubFines Logo" class="logo">
-        <h1>Willkommen bei ClubFines</h1>
-        <nav>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="https://demo.clubfines.com" target="_blank">Demo</a></li>
-            </ul>
-        </nav>
-    </header>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
 
-    <main>
-        <section id="hero">
-            <h2>Die smarte Lösung für Team- und Vereinsstrafen</h2>
-            <p>Mit ClubFines kannst du einfach und effizient Strafen innerhalb deines Teams oder Vereins verwalten.</p>
-        </section>
-        
-        <section id="features">
-            <h2>Unsere Features</h2>
-            <ul>
-                <li>Einfache Verwaltung von Strafen</li>
-                <li>Übersichtliche Statistiken</li>
-                <li>Individuelle Regelwerke</li>
-                <li>Automatische Benachrichtigungen</li>
-            </ul>
-        </section>
-        
-        <section id="about">
-            <h2>Über uns</h2>
-            <p>ClubFines wurde entwickelt, um Vereinen und Teams die Verwaltung interner Strafen zu erleichtern. Wir setzen auf Transparenz, Fairness und Benutzerfreundlichkeit.</p>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 ClubFines. Alle Rechte vorbehalten.</p>
-        <p>Kontakt: <a href="mailto:contact@clubfines.com">contact@clubfines.com</a></p>
-        <p>Quellcode: <a href="https://github.com/Kujo01243/demo.clubfines.com" target="_blank">GitHub Repository</a></p>
-    </footer>
+<script>
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        });
+</script>
 </body>
 </html>
