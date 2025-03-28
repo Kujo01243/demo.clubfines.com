@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubFines - Registrierung</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://demo.clubfines.com/pictures/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <img src="https://demo.clubfines.com/pictures/Logo.png" alt="ClubFines Logo" class="logo">
+        <h1>Registrierung bei ClubFines</h1>
+    </header>
+
+    <main>
+        <section id="registration">
+            <h2>Registrierung</h2>
+            <form action="/register" method="POST">
+                <label for="club-name">Vereinsname:</label>
+                <input type="text" id="club-name" name="club-name" placeholder="Geben Sie den Vereinsnamen ein" required>
+                
+                <label for="club-leader">Name des Vereinschefs:</label>
+                <input type="text" id="club-leader" name="club-leader" placeholder="Geben Sie den Namen des Vereinschefs ein" required>
+                
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" placeholder="Erstellen Sie ein Passwort" required>
+                
+                <button type="submit">Registrieren</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ClubFines. Alle Rechte vorbehalten.</p>
+        <p>Kontakt: <a href="mailto:contact@clubfines.com">contact@clubfines.com</a></p>
+    </footer>
+</body>
+</html>
