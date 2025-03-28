@@ -46,15 +46,16 @@ nav ul li a {
 main {
     flex: 1;
     padding: 20px;
-    max-width: 1400px; /* Breite des Hauptbereichs erhöht */
-    margin: 0 auto;
+    max-width: 8000px; /* Breite des Hauptbereichs erhöht */
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #registration {
-    max-width: 1200px; /* Breite des Registrierungsbereichs erhöht */
+    max-width: 8000px; /* Breite des Registrierungsbereichs erhöht */
     margin: 0 auto;
     padding: 20px;
 }
@@ -71,6 +72,8 @@ form {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+    width: 100%; /* Formular nimmt mindestens die Hälfte des Bildschirms ein */
+    margin: 0 auto; /* Zentriert das Formular */
 }
 
 form label {
@@ -79,8 +82,8 @@ form label {
 }
 
 form input, form textarea {
-    width: 90%; /* Breite der Eingabefelder erhöht */
-    padding: 15px; /* Innenabstand vergrößert */
+    width: 100%; /* Eingabefelder füllen die gesamte Breite des Formulars */
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
