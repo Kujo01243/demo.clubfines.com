@@ -1,0 +1,125 @@
+/* Allgemeine Stile */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #4287f5;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+header .logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hauptinhalt */
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 8000px; /* Breite des Hauptbereichs erhöht */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#registration {
+    max-width: 8000px; /* Breite des Registrierungsbereichs erhöht */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Überschriften */
+h2 {
+    color: #4287f5;
+    text-align: center;
+}
+
+/* Formulare */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%; /* Formular nimmt mindestens die Hälfte des Bildschirms ein */
+    margin: 0 auto; /* Zentriert das Formular */
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+form input, form textarea {
+    width: 100%; /* Eingabefelder füllen die gesamte Breite des Formulars */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 0.5em;
+}
+
+/* Buttons */
+button {
+    background-color: #4287f5;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #306ac9; /* Dunklere blaue Farbe */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #4287f5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
