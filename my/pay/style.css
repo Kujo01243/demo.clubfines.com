@@ -124,6 +124,13 @@ form select {
     text-align: center;
 }
 
+/* Betrag zentrieren */
+#amount-display {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
 /* Buttons */
 button {
     background-color: #4287f5;
