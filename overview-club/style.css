@@ -1,0 +1,166 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Stellt sicher, dass der Body die gesamte Höhe einnimmt */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4287f5;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+}
+
+header .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#hero {
+    color: black;
+    padding: 5em 0;
+    text-align: center;
+}
+
+section {
+    padding: 2em 0;
+    text-align: center;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-top: 1em;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Allgemeine Stile für den Hauptinhalt */
+main {
+    flex: 1; /* Nimmt den verfügbaren Platz ein */
+    padding: 20px; /* Padding um den Hauptinhalt */
+}
+
+/* Suchfeld */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    max-width: 100%;
+    box-sizing: border-box; /* Verhindert, dass Padding die Breite überschreitet */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#hidden-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Scrollbarer Container für die Tabelle */
+.table-container {
+    max-height: 400px; /* Maximale Höhe des Containers */
+    overflow-y: auto; /* Vertikales Scrollen aktivieren */
+    border: 1px solid #ddd; /* Rahmen um den Container */
+    border-radius: 8px;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Tabelle */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Padding innerhalb der Zellen */
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    position: sticky; /* Kopfzeile bleibt beim Scrollen sichtbar */
+    top: 0;
+    z-index: 1;
+}
+
+#playerTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Added styles for the 'Bezahlen' button */
+.pay-button {
+    background-color: #4287f5;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pay-button:hover {
+    background-color: #306ac9;
+}
