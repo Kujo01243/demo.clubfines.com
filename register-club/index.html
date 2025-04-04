@@ -18,25 +18,11 @@
 
     <main>
         <section id="player-registration">
-            <h2>Spielerregistrierung</h2>
+            <h2>Vereinsregistrierung</h2>
 
             <form action="/register/player-success.html" method="POST">
                 <label for="club-name">Vereinsname*</label>
-                <select id="club-name" name="club-name" required>
-                    <option value="">Wählen Sie einen Verein aus</option>
-                    <option value="FC Adler Berlin">FC Adler Berlin</option>
-                    <option value="SV Blau-Weiß Hamburg">SV Blau-Weiß Hamburg</option>
-                    <option value="TSV Stern München">TSV Stern München</option>
-                    <option value="SC Dynamo Dresden">SC Dynamo Dresden</option>
-                    <option value="VfL Fortuna Köln">VfL Fortuna Köln</option>
-                    <option value="1. FC Phoenix Leipzig">1. FC Phoenix Leipzig</option>
-                    <option value="SG Eintracht Frankfurt">SG Eintracht Frankfurt</option>
-                    <option value="FC Viktoria Stuttgart">FC Viktoria Stuttgart</option>
-                    <option value="SV Borussia Dortmund">SV Borussia Dortmund</option>
-                    <option value="TSG Union Bremen">TSG Union Bremen</option>
-                </select>
-
-                <!-- ...rest of the form remains unchanged... -->
+                <input type="text" id="club-name" name="club-name" placeholder="Geben Sie den Vereinsnamen ein" required>
 
                 <label for="first-name">Vorname*</label>
                 <input type="text" id="first-name" name="first-name" placeholder="Geben Sie den Vornamen ein" required>
