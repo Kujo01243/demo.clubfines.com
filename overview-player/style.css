@@ -88,6 +88,8 @@ main {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    max-width: 100%;
+    box-sizing: border-box; /* Verhindert, dass Padding die Breite überschreitet */
 }
 
 footer {
@@ -117,6 +119,8 @@ footer a:hover {
     overflow-y: auto; /* Vertikales Scrollen aktivieren */
     border: 1px solid #ddd; /* Rahmen um den Container */
     border-radius: 8px;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 /* Tabelle */
@@ -139,4 +143,9 @@ table th {
     position: sticky; /* Kopfzeile bleibt beim Scrollen sichtbar */
     top: 0;
     z-index: 1;
+}
+
+#playerTable {
+    width: 100%;
+    border-collapse: collapse;
 }
