@@ -19,7 +19,7 @@
     <main>
         <section id="player-overview">
             <h2>Bussenübersicht</h2>
-            <input type="text" id="searchInput" placeholder="Spieler suchen..." onkeyup="filterTable()" />
+            <input type="text" id="searchInput" placeholder="Busse suchen..." onkeyup="filterTable()" />
             <div>
                 <table id="playerTable">
                     <thead>
@@ -33,81 +33,156 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>50 CHF</td>
+                            <td>20 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>15.09.2025</td>
                             <td>Trainer Müller</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>30 CHF</td>
+                            <td>10 CHF</td>
                             <td>Zu spät kommen</td>
                             <td>20.02.2025</td>
                             <td>Trainer Müller</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>70 CHF</td>
+                            <td>30 CHF</td>
                             <td>Unsportliches Verhalten</td>
                             <td>25.07.2025</td>
                             <td>Trainer Schmidt</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>20 CHF</td>
+                            <td>10 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>30.07.2025</td>
                             <td>Trainer Meier</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>100 CHF</td>
                             <td>Schiedsrichterbeleidigung</td>
                             <td>05.08.2025</td>
                             <td>Trainer Keller</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>15 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>10.06.2025</td>
+                            <td>Trainer Fischer</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>25 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>15.07.2025</td>
+                            <td>Trainer Weber</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>40 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>20.07.2025</td>
+                            <td>Trainer Hofmann</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>20 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>05.08.2025</td>
+                            <td>Trainer Müller</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>10 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>10.08.2025</td>
+                            <td>Trainer Fischer</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>30 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>20.08.2025</td>
+                            <td>Trainer Schmidt</td>
+                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="paid-fines">
+            <h2>Bereits bezahlte Bussen</h2>
+            <div>
+                <table id="paidFinesTable">
+                    <thead>
+                        <tr>
+                            <th>Betrag</th>
+                            <th>Grund</th>
+                            <th>Zu zahlen bis am</th>
+                            <th>Erstellt von</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>50 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>15.01.2025</td>
+                            <td>Trainer Müller</td>
+                            <td>bezahlt</td>
+                        </tr>
+                        <tr>
+                            <td>30 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>20.02.2025</td>
+                            <td>Trainer Müller</td>
+                            <td>bezahlt</td>
+                        </tr>
+                        <tr>
+                            <td>70 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>25.03.2025</td>
+                            <td>Trainer Schmidt</td>
+                            <td>wiederrufen</td>
+                        </tr>
+                        <tr>
+                            <td>20 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>30.04.2025</td>
+                            <td>Trainer Meier</td>
+                            <td>bezahlt</td>
+                        </tr>
+                        <tr>
+                            <td>100 CHF</td>
+                            <td>Schiedsrichterbeleidigung</td>
+                            <td>05.05.2025</td>
+                            <td>Trainer Keller</td>
+                            <td>bezahlt</td>
                         </tr>
                         <tr>
                             <td>40 CHF</td>
                             <td>Zu spät kommen</td>
                             <td>10.06.2025</td>
                             <td>Trainer Fischer</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td>wiederrufen</td>
                         </tr>
                         <tr>
                             <td>60 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>15.07.2025</td>
                             <td>Trainer Weber</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td>bezahlt</td>
                         </tr>
                         <tr>
                             <td>80 CHF</td>
                             <td>Unsportliches Verhalten</td>
                             <td>20.07.2025</td>
                             <td>Trainer Hofmann</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
-                        </tr>
-                        <tr>
-                            <td>50 CHF</td>
-                            <td>Unentschuldigtes Fehlen</td>
-                            <td>05.08.2025</td>
-                            <td>Trainer Müller</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
-                        </tr>
-                        <tr>
-                            <td>30 CHF</td>
-                            <td>Zu spät kommen</td>
-                            <td>10.08.2025</td>
-                            <td>Trainer Fischer</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
-                        </tr>
-                        <tr>
-                            <td>70 CHF</td>
-                            <td>Unsportliches Verhalten</td>
-                            <td>20.08.2025</td>
-                            <td>Trainer Schmidt</td>
-                            <td><button class="pay-button">Bezahlen</button></td>
+                            <td>bezahlt</td>
                         </tr>
                     </tbody>
                 </table>
