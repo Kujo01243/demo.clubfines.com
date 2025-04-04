@@ -131,6 +131,13 @@ form select {
     margin-top: 10px;
 }
 
+/* Status-Button zentrieren */
+#status-button {
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
 /* Buttons */
 button {
     background-color: #4287f5;
