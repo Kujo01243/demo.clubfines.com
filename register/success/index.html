@@ -14,20 +14,22 @@
             .then(data => {
                 document.body.insertAdjacentHTML('afterbegin', data);
             });
-
-        // Meldung anzeigen
-        window.onload = function() {
-            alert('Verein erfolgreich registriert!');
-        };
     </script>
 
+    <main>
+        <section id="success-message">
+            <h2>Vielen Dank! Sie haben sich erfolgreich registriert!</h2>
+        </section>
 
-<script>
-    fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
-        });
-</script>
+        <!-- ...existing content... -->
+    </main>
+
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
 </body>
 </html>
