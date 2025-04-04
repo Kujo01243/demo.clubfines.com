@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubFines - Vereinsstrafen einfach verwalten</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/pictures/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+
+    <main>
+        <section id="player-overview">
+            <h2>Spielerübersicht</h2>
+            <input type="text" id="searchInput" placeholder="Spieler suchen..." onkeyup="filterTable()" />
+            <div class="table-container">
+                <table id="playerTable">
+                    <thead>
+                        <tr>
+                            <th>Vorname</th>
+                            <th>Nachname</th>
+                            <th>Email</th>
+                            <th>Telefonnummer</th>
+                            <th>Offener Betrag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Max</td>
+                            <td>Muster</td>
+                            <td>max.muster@example.com</td>
+                            <td>+41 79 123 45 67</td>
+                            <td>50 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Anna</td>
+                            <td>Beispiel</td>
+                            <td>anna.beispiel@example.com</td>
+                            <td>+41 78 987 65 43</td>
+                            <td>30 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Peter</td>
+                            <td>Schmidt</td>
+                            <td>peter.schmidt@example.com</td>
+                            <td>+41 76 555 44 33</td>
+                            <td>70 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Laura</td>
+                            <td>Meier</td>
+                            <td>laura.meier@example.com</td>
+                            <td>+41 77 666 55 44</td>
+                            <td>20 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Hans</td>
+                            <td>Keller</td>
+                            <td>hans.keller@example.com</td>
+                            <td>+41 79 111 22 33</td>
+                            <td>100 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Sophie</td>
+                            <td>Fischer</td>
+                            <td>sophie.fischer@example.com</td>
+                            <td>+41 78 222 33 44</td>
+                            <td>40 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Tom</td>
+                            <td>Weber</td>
+                            <td>tom.weber@example.com</td>
+                            <td>+41 76 333 44 55</td>
+                            <td>60 CHF</td>
+                        </tr>
+                        <tr>
+                            <td>Julia</td>
+                            <td>Hofmann</td>
+                            <td>julia.hofmann@example.com</td>
+                            <td>+41 77 444 55 66</td>
+                            <td>80 CHF</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+        // Suchfunktion für die Tabelle
+        function filterTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('playerTable');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let match = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(filter)) {
+                        match = true;
+                        break;
+                    }
+                }
+
+                rows[i].style.display = match ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>
