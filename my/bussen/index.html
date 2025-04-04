@@ -20,73 +20,94 @@
         <section id="player-overview">
             <h2>Bussenübersicht</h2>
             <input type="text" id="searchInput" placeholder="Spieler suchen..." onkeyup="filterTable()" />
-            <div class="table-container">
+            <div>
                 <table id="playerTable">
                     <thead>
                         <tr>
-                            <th>Vorname</th>
-                            <th>Nachname</th>
-                            <th>Email</th>
-                            <th>Telefonnummer</th>
-                            <th>Offener Betrag</th>
+                            <th>Betrag</th>
+                            <th>Grund</th>
+                            <th>Zu zahlen bis am</th>
+                            <th>Erstellt von</th>
+                            <th>Aktion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Max</td>
-                            <td>Muster</td>
-                            <td>max.muster@example.com</td>
-                            <td>+41 79 123 45 67</td>
                             <td>50 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>15.09.2025</td>
+                            <td>Trainer Müller</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Anna</td>
-                            <td>Beispiel</td>
-                            <td>anna.beispiel@example.com</td>
-                            <td>+41 78 987 65 43</td>
                             <td>30 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>20.02.2025</td>
+                            <td>Trainer Müller</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Peter</td>
-                            <td>Schmidt</td>
-                            <td>peter.schmidt@example.com</td>
-                            <td>+41 76 555 44 33</td>
                             <td>70 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>25.07.2025</td>
+                            <td>Trainer Schmidt</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Laura</td>
-                            <td>Meier</td>
-                            <td>laura.meier@example.com</td>
-                            <td>+41 77 666 55 44</td>
                             <td>20 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>30.07.2025</td>
+                            <td>Trainer Meier</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Hans</td>
-                            <td>Keller</td>
-                            <td>hans.keller@example.com</td>
-                            <td>+41 79 111 22 33</td>
                             <td>100 CHF</td>
+                            <td>Schiedsrichterbeleidigung</td>
+                            <td>05.08.2025</td>
+                            <td>Trainer Keller</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Sophie</td>
-                            <td>Fischer</td>
-                            <td>sophie.fischer@example.com</td>
-                            <td>+41 78 222 33 44</td>
                             <td>40 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>10.06.2025</td>
+                            <td>Trainer Fischer</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Tom</td>
-                            <td>Weber</td>
-                            <td>tom.weber@example.com</td>
-                            <td>+41 76 333 44 55</td>
                             <td>60 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>15.07.2025</td>
+                            <td>Trainer Weber</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                         <tr>
-                            <td>Julia</td>
-                            <td>Hofmann</td>
-                            <td>julia.hofmann@example.com</td>
-                            <td>+41 77 444 55 66</td>
                             <td>80 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>20.07.2025</td>
+                            <td>Trainer Hofmann</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>50 CHF</td>
+                            <td>Unentschuldigtes Fehlen</td>
+                            <td>05.08.2025</td>
+                            <td>Trainer Müller</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>30 CHF</td>
+                            <td>Zu spät kommen</td>
+                            <td>10.08.2025</td>
+                            <td>Trainer Fischer</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
+                        </tr>
+                        <tr>
+                            <td>70 CHF</td>
+                            <td>Unsportliches Verhalten</td>
+                            <td>20.08.2025</td>
+                            <td>Trainer Schmidt</td>
+                            <td><button class="pay-button">Bezahlen</button></td>
                         </tr>
                     </tbody>
                 </table>
