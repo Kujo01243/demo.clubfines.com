@@ -22,19 +22,21 @@
 
             <form action="/register/player-success.html" method="POST">
                 <label for="club-name">Vereinsname*</label>
-                <input list="club-names" id="club-name" name="club-name" placeholder="Wählen Sie einen Verein aus" required>
-                <datalist id="club-names">
-                    <option value="FC Adler Berlin"></option>
-                    <option value="SV Blau-Weiß Hamburg"></option>
-                    <option value="TSV Stern München"></option>
-                    <option value="SC Dynamo Dresden"></option>
-                    <option value="VfL Fortuna Köln"></option>
-                    <option value="1. FC Phoenix Leipzig"></option>
-                    <option value="SG Eintracht Frankfurt"></option>
-                    <option value="FC Viktoria Stuttgart"></option>
-                    <option value="SV Borussia Dortmund"></option>
-                    <option value="TSG Union Bremen"></option>
-                </datalist>
+                <select id="club-name" name="club-name" required>
+                    <option value="">Wählen Sie einen Verein aus</option>
+                    <option value="FC Adler Berlin">FC Adler Berlin</option>
+                    <option value="SV Blau-Weiß Hamburg">SV Blau-Weiß Hamburg</option>
+                    <option value="TSV Stern München">TSV Stern München</option>
+                    <option value="SC Dynamo Dresden">SC Dynamo Dresden</option>
+                    <option value="VfL Fortuna Köln">VfL Fortuna Köln</option>
+                    <option value="1. FC Phoenix Leipzig">1. FC Phoenix Leipzig</option>
+                    <option value="SG Eintracht Frankfurt">SG Eintracht Frankfurt</option>
+                    <option value="FC Viktoria Stuttgart">FC Viktoria Stuttgart</option>
+                    <option value="SV Borussia Dortmund">SV Borussia Dortmund</option>
+                    <option value="TSG Union Bremen">TSG Union Bremen</option>
+                </select>
+
+                <!-- ...rest of the form remains unchanged... -->
 
                 <label for="first-name">Vorname*</label>
                 <input type="text" id="first-name" name="first-name" placeholder="Geben Sie den Vornamen ein" required>
@@ -48,19 +50,6 @@
                 <label for="birthdate">Geburtstag*</label>
                 <input type="date" id="birthdate" name="birthdate" required>
 
-                <div class="checkbox-container">
-                    <input type="checkbox" id="not-18-checkbox">
-                    <label for="not-18-checkbox">Ich bin noch nicht 18 Jahre alt</label>
-                </div>
-
-                <div id="guardian-fields" style="display: none;">
-                    <label for="guardian-first-name">Vorname Erziehungsberechtigte/r*</label>
-                    <input type="text" id="guardian-first-name" name="guardian-first-name" placeholder="Vorname Erziehungsberechtigte/r">
-
-                    <label for="guardian-last-name">Nachname Erziehungsberechtigte/r*</label>
-                    <input type="text" id="guardian-last-name" name="guardian-last-name" placeholder="Nachname Erziehungsberechtigte/r">
-                </div>
-
                 <button type="submit">Registrieren</button>
             </form>
         </section>
@@ -73,6 +62,5 @@
                 document.body.insertAdjacentHTML('beforeend', data);
             });
     </script>
-    <script src="form.js"></script>
 </body>
 </html>

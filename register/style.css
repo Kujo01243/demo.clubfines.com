@@ -47,7 +47,7 @@ nav ul li a {
 main {
     flex: 1;
     padding: 20px;
-    max-width: 8000px; /* Breite des Hauptbereichs erhöht */
+    max-width: 8000px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -56,7 +56,7 @@ main {
 }
 
 #registration {
-    max-width: 8000px; /* Breite des Registrierungsbereichs erhöht */
+    max-width: 8000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -73,8 +73,8 @@ form {
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    width: 100%; /* Formular nimmt mindestens die Hälfte des Bildschirms ein */
-    margin: 0 auto; /* Zentriert das Formular */
+    width: 100%;
+    margin: 0 auto;
 }
 
 form label {
@@ -82,55 +82,27 @@ form label {
     margin-top: 1em;
 }
 
-form input, form textarea {
-    width: 100%; /* Eingabefelder füllen die gesamte Breite des Formulars */
+/* Input, Select und Textarea im gleichen Stil */
+form input, form select, form textarea {
+    width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     margin-top: 0.5em;
+    background-color: white; /* Für einheitlichen Hintergrund */
+    appearance: none; /* Entfernt den Standard-Dropdown-Pfeil */
+    box-sizing: border-box; /* Wichtig: Damit width 100% das Padding einschließt */
 }
 
-/* Styling für die Checkbox */
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-}
-
-.checkbox-container input[type="checkbox"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #4287f5;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-}
-
-.checkbox-container input[type="checkbox"]:checked {
-    background-color: #4287f5;
-    border-color: #4287f5;
-}
-
-.checkbox-container input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 7px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-
-.checkbox-container label {
-    margin-left: 10px;
-    font-size: 16px;
-    color: #333;
-    cursor: pointer;
+/* Eigener Dropdown-Pfeil */
+form select {
+    width: 100%;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333'%3E%3Cpath d='M6 9L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 45px; /* Platz für den Pfeil */
+    cursor: pointer; /* Zeigt an, dass es klickbar ist */
 }
 
 /* Buttons */
@@ -145,7 +117,7 @@ button {
 }
 
 button:hover {
-    background-color: #306ac9; /* Dunklere blaue Farbe */
+    background-color: #306ac9;
 }
 
 /* Footer */
