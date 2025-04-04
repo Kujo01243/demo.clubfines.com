@@ -6,6 +6,33 @@
     <title>ClubFines - Vereinsstrafen einfach verwalten</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <style>
+        .page-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+            padding: 1em;
+        }
+
+        .page-link {
+            background-color: #cccccc;
+            color: black;
+            padding: 2em;
+            text-align: center;
+            display: flex; /* Added for centering */
+            justify-content: center; /* Horizontally center text */
+            align-items: center; /* Vertically center text */
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .page-link:hover {
+            background-color: #aaaaaa;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -16,6 +43,20 @@
             });
     </script>
 
+<main>
+    <section id="overview">
+        <h2>Seitenübersicht</h2>
+        <div class="page-links">
+            <div class="page-link" onclick="window.location.href='/my/bussen/'">Bussenübersicht</div>
+            <div class="page-link" onclick="window.location.href='/my/pay/'">Busse bezahlen</div>
+            <div class="page-link" onclick="window.location.href='/register/'">Spielerregistrierung</div>
+            <div class="page-link" onclick="window.location.href='/register-club/index.html'">Vereinsregistrierung</div>
+            <div class="page-link" onclick="window.location.href='/overview-player/index.html'">Spielerübersicht</div>
+            <div class="page-link" onclick="window.location.href='/overview-club/index.html'">Vereinsübersicht</div>
+            <div class="page-link" onclick="window.location.href='/add-fine/index.html'">Busse erfassen</div>
+        </div>
+    </section>
+</main>
 
 <script>
     fetch('/footer.html')
