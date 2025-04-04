@@ -37,77 +37,77 @@
                             <td>Unentschuldigtes Fehlen</td>
                             <td>15.09.2025</td>
                             <td>Trainer Müller</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(20)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>10 CHF</td>
                             <td>Zu spät kommen</td>
                             <td>20.02.2025</td>
                             <td>Trainer Müller</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(10)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>30 CHF</td>
                             <td>Unsportliches Verhalten</td>
                             <td>25.07.2025</td>
                             <td>Trainer Schmidt</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(30)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>10 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>30.07.2025</td>
                             <td>Trainer Meier</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(10)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>100 CHF</td>
                             <td>Schiedsrichterbeleidigung</td>
                             <td>05.08.2025</td>
                             <td>Trainer Keller</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(100)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>15 CHF</td>
                             <td>Zu spät kommen</td>
                             <td>10.06.2025</td>
                             <td>Trainer Fischer</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(15)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>25 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>15.07.2025</td>
                             <td>Trainer Weber</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(25)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>40 CHF</td>
                             <td>Unsportliches Verhalten</td>
                             <td>20.07.2025</td>
                             <td>Trainer Hofmann</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(40)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>20 CHF</td>
                             <td>Unentschuldigtes Fehlen</td>
                             <td>05.08.2025</td>
                             <td>Trainer Müller</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(20)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>10 CHF</td>
                             <td>Zu spät kommen</td>
                             <td>10.08.2025</td>
                             <td>Trainer Fischer</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(10)">Bezahlen</button></td>
                         </tr>
                         <tr>
                             <td>30 CHF</td>
                             <td>Unsportliches Verhalten</td>
                             <td>20.08.2025</td>
                             <td>Trainer Schmidt</td>
-                            <td><button class="pay-button" onclick="window.location.href='/my/pay'">Bezahlen</button></td>
+                            <td><button class="pay-button" onclick="redirectToPay(30)">Bezahlen</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -217,6 +217,24 @@
 
                 rows[i].style.display = match ? '' : 'none';
             }
+        }
+
+        function redirectToPay(amount) {
+            window.location.href = `/my/pay/index.html?amount=${amount}`;
+        }
+
+        // Funktion, um Query-Parameter auszulesen
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Betrag auslesen und anzeigen
+        const amount = getQueryParam('amount');
+        if (amount) {
+            const priceElement = document.createElement('p');
+            priceElement.textContent = `Zu zahlender Betrag: ${amount} CHF`;
+            document.querySelector('#pay').appendChild(priceElement);
         }
     </script>
 </body>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClubFines - Vereinsstrafen einfach verwalten</title>
+    <title>ClubFines - Registrierung</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://demo.clubfines.com/pictures/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <script>
@@ -16,13 +16,66 @@
             });
     </script>
 
+    <main>
+        <section id="pay">
+            <h2>Busse bezahlen</h2>
 
-<script>
-    fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
-        });
-</script>
+            <!-- Betrag wird hier dynamisch eingefügt -->
+            <p id="amount-display"></p>
+
+            <form action="../success/" method="POST">
+                <!-- Entfernte Felder: Vorname und Nachname -->
+                <!-- Die Felder wurden entfernt, da sie nicht mehr benötigt werden. -->
+                <!-- Entfernte Schaltfläche: Registrieren -->
+                <!-- Der Button wurde entfernt, da er nicht mehr benötigt wird. -->
+            </form>
+        </section>
+
+        <section id="qr-code">
+            <h3>QR-Code für Twint-Zahlung</h3>
+            <img id="qr-code-image" src="" alt="QR-Code für Twint-Zahlung">
+            <p>Scannen Sie den QR-Code mit Ihrer Twint-App, um die Zahlung abzuschließen.</p>
+        </section>
+    </main>
+
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+        // Betrag aus der URL auslesen und anzeigen
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const amount = getQueryParam('amount');
+        if (amount) {
+            const amountDisplay = document.getElementById('amount-display');
+            amountDisplay.textContent = `Zu zahlender Betrag: ${amount} CHF`;
+        } else {
+            const amountDisplay = document.getElementById('amount-display');
+            amountDisplay.textContent = 'Kein Betrag angegeben.';
+        }
+
+        // Funktion zur Generierung eines zufälligen QR-Codes (Beispiel-URL)
+        function generateQRCode(amount) {
+            const qrCodeImage = document.getElementById('qr-code-image');
+            const randomId = Math.floor(Math.random() * 1000000); // Zufällige ID für die Zahlung
+            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=twint://pay?amount=${amount}&id=${randomId}&size=200x200`;
+            qrCodeImage.src = qrCodeUrl;
+            qrCodeImage.alt = `QR-Code für ${amount} CHF`;
+        }
+
+        // Betrag aus der URL auslesen und QR-Code generieren
+        if (amount) {
+            generateQRCode(amount);
+        } else {
+            const qrCodeSection = document.getElementById('qr-code');
+            qrCodeSection.innerHTML = '<p>Kein Betrag angegeben. QR-Code kann nicht generiert werden.</p>';
+        }
+    </script>
 </body>
 </html>
