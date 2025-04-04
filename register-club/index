@@ -1,0 +1,31 @@
+.html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubFines - Registrierung</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://demo.clubfines.com/pictures/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+
+    <main>
+        <section id="player-registration">
+            <h2>Spielerregistrierung</h2>
+
+            <form action="/register/player-success.html" method="POST">
+                <label for="club-name">Vereinsname*</label>
+                <input type="text" id="club-name" name="club-name" placeholder="Geben Sie den Vereinsnamen ein" required>
+
+                <label for="first-name">Vorname*</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Geben Sie den Vornamen ein" required>
+
+                <!-- ...rest of the form remains unchanged... -->
