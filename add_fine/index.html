@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubFines - Busse erfassen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://demo.clubfines.com/pictures/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
+
+    <main>
+        <section id="add-fine">
+            <h2>Busse für Spieler erfassen</h2>
+
+            <form action="/add_fine/success.html" method="POST">
+
+                <label for="club-name">Vereinsname*</label>
+                <select id="club-name" name="club-name" required>
+                    <option value="">Wählen Sie einen Verein aus</option>
+                    <option value="FC Adler Berlin">FC Adler Berlin</option>
+                    <option value="SV Blau-Weiß Hamburg">SV Blau-Weiß Hamburg</option>
+                    <option value="TSV Stern München">TSV Stern München</option>
+                    <option value="SC Dynamo Dresden">SC Dynamo Dresden</option>
+                    <option value="VfL Fortuna Köln">VfL Fortuna Köln</option>
+                    <option value="1. FC Phoenix Leipzig">1. FC Phoenix Leipzig</option>
+                    <option value="SG Eintracht Frankfurt">SG Eintracht Frankfurt</option>
+                    <option value="FC Viktoria Stuttgart">FC Viktoria Stuttgart</option>
+                    <option value="SV Borussia Dortmund">SV Borussia Dortmund</option>
+                    <option value="TSG Union Bremen">TSG Union Bremen</option>
+                </select>
+
+                <label for="player-name">Spielername*</label>
+                <input type="text" id="player-name" name="player-name" placeholder="Name des Spielers" required>
+
+                <label for="fine-reason">Grund der Busse*</label>
+                <input type="text" id="fine-reason" name="fine-reason" placeholder="Grund der Busse" required>
+
+                <label for="fine-amount">Betrag (in CHF)*</label>
+                <input type="number" id="fine-amount" name="fine-amount" placeholder="z. B. 50" required>
+
+                <label for="fine-date">Datum der Busse*</label>
+                <input type="date" id="fine-date" name="fine-date" required>
+
+                <button type="submit">Busse erfassen</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</body>
+</html>
