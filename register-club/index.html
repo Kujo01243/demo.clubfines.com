@@ -55,39 +55,57 @@
                         const priceDisplay = document.getElementById('price-display');
                         const submitButton = document.querySelector('button');
 
+                        // Standardbutton ausblenden und neuen Button einfügen
+                        const existingOfferteButton = document.getElementById('offerte-button');
+                        if (existingOfferteButton) {
+                            existingOfferteButton.remove();
+                        }
+
                         switch (size) {
                             case 'starter':
                                 priceDisplay.textContent = 'Preis: 29 CHF / Monat, 870 CHF / Jahr';
+                                submitButton.style.display = 'inline-block';
                                 submitButton.textContent = 'Verein Registrieren';
                                 submitButton.type = 'submit';
-                                submitButton.onclick = null;
                                 break;
                             case 'team':
                                 priceDisplay.textContent = 'Preis: 25 CHF / Monat, 1.250 CHF / Jahr';
+                                submitButton.style.display = 'inline-block';
                                 submitButton.textContent = 'Verein Registrieren';
                                 submitButton.type = 'submit';
-                                submitButton.onclick = null;
                                 break;
                             case 'club':
                                 priceDisplay.textContent = 'Preis: 22 CHF / Monat, 2.000 CHF / Jahr';
+                                submitButton.style.display = 'inline-block';
                                 submitButton.textContent = 'Verein Registrieren';
                                 submitButton.type = 'submit';
-                                submitButton.onclick = null;
                                 break;
                             case 'elite':
                                 priceDisplay.textContent = 'Preis: Individuelle Offerte';
-                                submitButton.textContent = 'Offerte anfordern';
-                                submitButton.type = 'button';
-                                submitButton.onclick = function(event) {
-                                    event.preventDefault(); // Verhindert Standardaktionen
-                                    window.open('mailto:info@clubfines.com?subject=Offerte%20anfordern&body=Bitte%20geben%20Sie%20uns%20weitere%20Informationen%20zu%20Ihrem%20Verein.', '_self');
-                                };
+                                submitButton.style.display = 'none'; // Versteckt den ursprünglichen Button vollständig
+
+                                const offerteButton = document.createElement('a');
+                                offerteButton.id = 'offerte-button';
+                                offerteButton.textContent = 'Offerte anfordern';
+                                offerteButton.href = 'mailto:info@clubfines.com?subject=Offerte%20anfordern&body=Bitte%20geben%20Sie%20uns%20weitere%20Informationen%20zu%20Ihrem%20Verein.';
+                                offerteButton.style.display = 'inline-block';
+                                offerteButton.style.backgroundColor = '#4287f5';
+                                offerteButton.style.color = 'white';
+                                offerteButton.style.padding = '10px';
+                                offerteButton.style.border = 'none';
+                                offerteButton.style.borderRadius = '4px';
+                                offerteButton.style.fontSize = '16px';
+                                offerteButton.style.textDecoration = 'none';
+                                offerteButton.style.textAlign = 'center';
+                                offerteButton.style.cursor = 'pointer';
+
+                                submitButton.parentNode.appendChild(offerteButton);
                                 break;
                             default:
                                 priceDisplay.textContent = 'Preis: —';
+                                submitButton.style.display = 'inline-block';
                                 submitButton.textContent = 'Verein Registrieren';
                                 submitButton.type = 'submit';
-                                submitButton.onclick = null;
                         }
                     }
 
