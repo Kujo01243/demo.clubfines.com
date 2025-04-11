@@ -39,6 +39,62 @@
                 <label for="club-type">Art des Vereins*</label>
                 <input type="text" id="club-type" name="club-type" placeholder="z. B. Fussballverein, Tennisclub" required>
 
+                <label for="club-size">Vereinsgröße*</label>
+                <select id="club-size" name="club-size" required onchange="updatePrice()">
+                    <option value="starter">Starter: 1 – 30 Spieler</option>
+                    <option value="team">Team: 31 – 80 Spieler</option>
+                    <option value="club">Club: 81 – 200 Spieler</option>
+                    <option value="elite">Elite: 201+ Spieler</option>
+                </select>
+
+                <p id="price-display" style="font-weight: bold; text-align: center; margin-top: 20px;">Preis: —</p>
+
+                <script>
+                    function updatePrice() {
+                        const size = document.getElementById('club-size').value;
+                        const priceDisplay = document.getElementById('price-display');
+                        const submitButton = document.querySelector('button');
+
+                        switch (size) {
+                            case 'starter':
+                                priceDisplay.textContent = 'Preis: 29 CHF / Monat, 870 CHF / Jahr';
+                                submitButton.textContent = 'Verein Registrieren';
+                                submitButton.type = 'submit';
+                                submitButton.onclick = null;
+                                break;
+                            case 'team':
+                                priceDisplay.textContent = 'Preis: 25 CHF / Monat, 1.250 CHF / Jahr';
+                                submitButton.textContent = 'Verein Registrieren';
+                                submitButton.type = 'submit';
+                                submitButton.onclick = null;
+                                break;
+                            case 'club':
+                                priceDisplay.textContent = 'Preis: 22 CHF / Monat, 2.000 CHF / Jahr';
+                                submitButton.textContent = 'Verein Registrieren';
+                                submitButton.type = 'submit';
+                                submitButton.onclick = null;
+                                break;
+                            case 'elite':
+                                priceDisplay.textContent = 'Preis: Individuelle Offerte';
+                                submitButton.textContent = 'Offerte anfordern';
+                                submitButton.type = 'button';
+                                submitButton.onclick = function(event) {
+                                    event.preventDefault(); // Verhindert Standardaktionen
+                                    window.open('mailto:info@clubfines.com?subject=Offerte%20anfordern&body=Bitte%20geben%20Sie%20uns%20weitere%20Informationen%20zu%20Ihrem%20Verein.', '_self');
+                                };
+                                break;
+                            default:
+                                priceDisplay.textContent = 'Preis: —';
+                                submitButton.textContent = 'Verein Registrieren';
+                                submitButton.type = 'submit';
+                                submitButton.onclick = null;
+                        }
+                    }
+
+                    // Standardpreis beim Laden der Seite anzeigen
+                    document.addEventListener('DOMContentLoaded', updatePrice);
+                </script>
+
                 <button type="submit">Verein Registrieren</button>
             </form>
         </section>
