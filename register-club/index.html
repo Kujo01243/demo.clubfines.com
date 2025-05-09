@@ -87,7 +87,6 @@
                                 const offerteButton = document.createElement('a');
                                 offerteButton.id = 'offerte-button';
                                 offerteButton.textContent = 'Offerte anfordern';
-                                offerteButton.href = 'mailto:contact@clubfines.com?subject=Offerte%20anfordern&body=Bitte%20geben%20Sie%20uns%20weitere%20Informationen%20zu%20Ihrem%20Verein.';
                                 offerteButton.style.display = 'inline-block';
                                 offerteButton.style.backgroundColor = '#4287f5';
                                 offerteButton.style.color = 'white';
@@ -98,6 +97,19 @@
                                 offerteButton.style.textDecoration = 'none';
                                 offerteButton.style.textAlign = 'center';
                                 offerteButton.style.cursor = 'pointer';
+
+                                offerteButton.onclick = function(event) {
+                                    event.preventDefault();
+                                    const clubName = document.getElementById('club-name').value;
+                                    const firstName = document.getElementById('first-name').value;
+                                    const lastName = document.getElementById('last-name').value;
+                                    const email = document.getElementById('email').value;
+                                    const clubType = document.getElementById('club-type').value;
+                                    const clubSize = document.getElementById('club-size').value;
+
+                                    const mailtoLink = `mailto:info@clubfines.com?subject=Offerte%20anfordern&body=Vereinsname:%20${encodeURIComponent(clubName)}%0D%0AVorname:%20${encodeURIComponent(firstName)}%0D%0ANachname:%20${encodeURIComponent(lastName)}%0D%0AE-Mail:%20${encodeURIComponent(email)}%0D%0AArt%20des%20Vereins:%20${encodeURIComponent(clubType)}%0D%0AVereinsgröße:%20${encodeURIComponent(clubSize)}`;
+                                    location.href = mailtoLink;
+                                };
 
                                 submitButton.parentNode.appendChild(offerteButton);
                                 break;
