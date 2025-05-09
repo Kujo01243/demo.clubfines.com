@@ -107,7 +107,7 @@
                                     const clubType = document.getElementById('club-type').value;
                                     const clubSize = document.getElementById('club-size').value;
 
-                                    const mailtoLink = `mailto:info@clubfines.com?subject=Offerte%20anfordern&body=Vereinsname:%20${encodeURIComponent(clubName)}%0D%0AVorname:%20${encodeURIComponent(firstName)}%0D%0ANachname:%20${encodeURIComponent(lastName)}%0D%0AE-Mail:%20${encodeURIComponent(email)}%0D%0AArt%20des%20Vereins:%20${encodeURIComponent(clubType)}%0D%0AVereinsgröße:%20${encodeURIComponent(clubSize)}`;
+                                    const mailtoLink = `mailto:info@clubfines.com?subject=Anfrage%20für%20eine%20Offerte&body=Sehr%20geehrtes%20ClubFines-Team,%0D%0A%0D%0Aich%20möchte%20gerne%20eine%20Offerte%20für%20meinen%20Verein%20anfordern.%20Hier%20sind%20die%20Details:%0D%0A%0D%0A- Vereinsname: ${encodeURIComponent(clubName)}%0D%0A- Vorname: ${encodeURIComponent(firstName)}%0D%0A- Nachname: ${encodeURIComponent(lastName)}%0D%0A- E-Mail: ${encodeURIComponent(email)}%0D%0A- Art des Vereins: ${encodeURIComponent(clubType)}%0D%0A- Vereinsgröße: ${encodeURIComponent(clubSize)}%0D%0A%0D%0ABitte%20lassen%20Sie%20mich%20wissen,%20ob%20weitere%20Informationen%20benötigt%20werden.%0D%0A%0D%0AMit%20freundlichen%20Grüßen,%0D%0A${encodeURIComponent(firstName)}%20${encodeURIComponent(lastName)}`;
                                     location.href = mailtoLink;
                                 };
 
